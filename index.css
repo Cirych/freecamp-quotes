@@ -6,7 +6,7 @@ width: 100%;
 font-family: 'Dancing Script', cursive !important;
 color: #fff;
 height: 176px;
-background: #00F url('img/bckgrnd.jpg') center / cover;
+background: #00F url('https://raw.githubusercontent.com/Cirych/freecamp-quotes/master/img/bckgrnd.jpg') center / cover;
 }
 .demo-card-wide > .mdl-card__menu {
 color: #fff;
