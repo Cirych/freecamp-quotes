@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script);
+.demo-card-wide.mdl-card {
+width: 100%;
+}
+.demo-card-wide > .mdl-card__title {
+font-family: 'Dancing Script', cursive !important;
+color: #fff;
+height: 176px;
+background: #00F url('img/bckgrnd.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+color: #fff;
+}
+#author{
+text-align: right;
+}
+iframe{
+display:inline;
+}

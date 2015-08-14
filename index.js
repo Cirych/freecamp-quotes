@@ -1,0 +1,58 @@
+var quotes = [
+"You can do anything, but not everything.—David Allen",
+"Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.—Antoine de Saint-Exupéry",
+"The richest man is not he who has the most, but he who needs the least.—Unknown Author",
+"You miss 100 percent of the shots you never take.—Wayne Gretzky",
+"Courage is not the absence of fear, but rather the judgement that something else is more important than fear.—Ambrose Redmoon",
+"You must be the change you wish to see in the world.—Gandhi",
+"When hungry, eat your rice; when tired, close your eyes. Fools may laugh at me, but wise men will know what I mean.—Lin-Chi",
+"The third-rate mind is only happy when it is thinking with the majority. The second-rate mind is only happy when it is thinking with the minority. The first-rate mind is only happy when it is thinking.—A. A. Milne",
+"To the man who only has a hammer, everything he encounters begins to look like a nail.—Abraham Maslow",
+"We are what we repeatedly do; excellence, then, is not an act but a habit.—Aristotle",
+"A wise man gets more use from his enemies than a fool from his friends.—Baltasar Gracian",
+"Do not seek to follow in the footsteps of the men of old; seek what they sought.—Basho",
+"Everyone is a genius at least once a year. The real geniuses simply have their bright ideas closer together.—Georg Christoph Lichtenberg",
+"What we think, or what we know, or what we believe is, in the end, of little consequence. The only consequence is what we do.—John Ruskin",
+"The real voyage of discovery consists not in seeking new lands but seeing with new eyes.—Marcel Proust",
+"Work like you don’t need money, love like you’ve never been hurt, and dance like no one’s watching—Unknown Author",
+"Try a thing you haven’t done three times. Once, to get over the fear of doing it. Twice, to learn how to do it. And a third time, to figure out whether you like it or not.—Virgil Garnett Thomson",
+"Even if you’re on the right track, you’ll get run over if you just sit there.—Will Rogers",
+"People often say that motivation doesn’t last. Well, neither does bathing – that’s why we recommend it daily.—Zig Ziglar",
+"Before I got married I had six theories about bringing up children; now I have six children and no theories.—John Wilmot",
+"What the world needs is more geniuses with humility, there are so few of us left.—Oscar Levant",
+"Always forgive your enemies; nothing annoys them so much.—Oscar Wilde",
+"I’ve gone into hundreds of [fortune-teller’s parlors], and have been told thousands of things, but nobody ever told me I was a policewoman getting ready to arrest her.—New York City detective",
+"When you go into court you are putting your fate into the hands of twelve people who weren’t smart enough to get out of jury duty.—Norm Crosby",
+"Just the fact that some geniuses were laughed at does not imply that all who are laughed at are geniuses. They laughed at Columbus, they laughed at Fulton, they laughed at the Wright brothers. But they also laughed at Bozo the Clown.—Carl Sagan",
+"My pessimism extends to the point of even suspecting the sincerity of the pessimists.—Jean Rostand",
+"Sometimes I worry about being a success in a mediocre world.—Lily Tomlin",
+"I quit therapy because my analyst was trying to help me behind my back.—Richard Lewis",
+"We’ve heard that a million monkeys at a million keyboards could produce the complete works of Shakespeare; now, thanks to the Internet, we know that is not true.—Robert Wilensky",
+"If there are no stupid questions, then what kind of questions do stupid people ask? Do they get smart just in time to ask questions?—Scott Adams",
+"If the lessons of history teach us anything it is that nobody learns the lessons that history teaches us.—Anon",
+"When I was a boy I was told that anybody could become President. Now I’m beginning to believe it.—Clarence Darrow",
+"Laughing at our mistakes can lengthen our own life. Laughing at someone else’s can shorten it.—Cullen Hightower",
+"There are many who dare not kill themselves for fear of what the neighbors will say.—Cyril Connolly"
+];
+var controls = {};
+function nextQuote() {
+	var quote = quotes[(Math.floor(Math.random() * quotes.length))];
+	controls.twitin='<a id="twitin" href="https://twitter.com/share" class="twitter-share-button" data-text="'+quote+'" data-via="Ki_Tec" data-size="large" data-count="none">Tweet</a>';
+	controls.twit.innerHTML=controls.twitin; 
+	if(typeof twttr != "undefined") twttr.widgets.load();
+	quote = quote.split("—");
+	controls.quote.innerHTML = quote[0];
+	controls.author.innerHTML = quote[1];
+};
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    controls.quote = document.getElementById("quote");
+	controls.author = document.getElementById("author");
+	controls.twit = document.getElementById("twit");
+	controls.twitin = document.getElementById("twitin");
+	document.getElementById("next").addEventListener("click", function(event) {
+	nextQuote();
+	});
+	nextQuote();
+});
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
